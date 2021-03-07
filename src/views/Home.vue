@@ -50,16 +50,18 @@
       </v-col>
     </v-row>
     <cards />
+    <album />
   </div>
 </template>
 
 <script>
 import headerComp from "@/components/main/header.vue";
 import cards from "@/components/cards/cards.vue";
+import album from "@/components/album/album.vue";
 
 export default {
   name: "Home",
-  components: { headerComp, cards },
+  components: { headerComp, cards, album },
 };
 </script>
 
