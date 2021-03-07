@@ -58,10 +58,21 @@
 import headerComp from "@/components/main/header.vue";
 import cards from "@/components/cards/cards.vue";
 import album from "@/components/album/album.vue";
+import * as dataServices from "@/service/api/api.js";
 
 export default {
   name: "Home",
   components: { headerComp, cards, album },
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      dataServices.get().then((res) => {
+        console.log(res);
+      });
+    },
+  },
 };
 </script>
 
