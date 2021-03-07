@@ -49,16 +49,17 @@
         </v-row>
       </v-col>
     </v-row>
-  
+    <cards />
   </div>
 </template>
 
 <script>
 import headerComp from "@/components/main/header.vue";
+import cards from "@/components/cards/cards.vue";
 
 export default {
   name: "Home",
-  components: { headerComp },
+  components: { headerComp, cards },
 };
 </script>
 
