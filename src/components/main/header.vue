@@ -29,7 +29,7 @@ export default {};
     button {
       background-color: white;
       border: none;
-      font-size: 15px;
+      font-size: 14px;
       margin-top: 10px;
       padding: 10px 20px;
     }

@@ -51,6 +51,7 @@
     </v-row>
     <cards />
     <album />
+ 
   </div>
 </template>
 
@@ -58,20 +59,16 @@
 import headerComp from "@/components/main/header.vue";
 import cards from "@/components/cards/cards.vue";
 import album from "@/components/album/album.vue";
-import * as dataServices from "@/service/api/api.js";
+// import * as dataServices from "@/service/api/api.js";
 
 export default {
   name: "Home",
   components: { headerComp, cards, album },
   mounted() {
-    this.getData();
+    // this.getData();
   },
   methods: {
-    getData() {
-      dataServices.get().then((res) => {
-        console.log(res);
-      });
-    },
+    
   },
 };
 </script>
@@ -96,17 +93,17 @@ export default {
   .photoWrapper {
     border: 15px solid $mainColor;
     border-radius: 100%;
-    height: 495px;
-    width: 495px;
+    height: 395px;
+    width: 395px;
     margin: 70px -78px 26px 62px;
     background-color: $white;
   }
   .photo {
     background-image: url("../assets/img/profile.jpg");
     background-size: cover;
-    height: 352px;
+    height: 252px;
+    width: 252px;
     border-radius: 100%;
-    width: 352px;
     margin-left: 53px;
     margin-top: 53px;
     border: 20px solid $mainColor;
@@ -123,8 +120,8 @@ export default {
 
   .middleBox {
     .textWrapper {
-      margin-left: 10%;
-      margin-top: 22%;
+      margin-left: 10vw;
+      margin-top: 20vh;
       p {
         font-size: 25px;
         margin-right: 25%;
@@ -135,9 +132,9 @@ export default {
       }
       .line {
         position: absolute;
-        top: 320px;
+        top: 270px;
         left: 0;
-        width: 22vw;
+        width: 28vw;
         height: 15px;
         background: $white;
         box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
@@ -151,7 +148,7 @@ export default {
       li {
         list-style: none;
         color: $mainColor;
-        font-size: 100px;
+        font-size: 90px;
         position: relative;
         z-index: 3;
         &:nth-child(1),
@@ -168,7 +165,7 @@ export default {
 
       @keyframes stretch {
         to {
-          left: 52vw;
+          left: 60vw;
         }
       }
       button {
@@ -184,7 +181,7 @@ export default {
     .verticalWrapper {
       p {
         transform: rotate(90deg);
-        font-size: 13px;
+        font-size: 11px;
         color: $mainColor;
         margin-top: 24vh;
       }
@@ -207,6 +204,72 @@ export default {
           }
         }
       }
+    }
+  }
+}
+@media (min-width: 1130px) {
+  .rightBox {
+    .middleBox {
+      .textWrapper {
+        .line {
+          width: 22vw;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1280px) {
+  .leftBox {
+    .photoWrapper {
+      height: 495px;
+      width: 495px;
+    }
+    .photo {
+      height: 352px;
+      width: 352px;
+    }
+  }
+  .rightBox {
+    .middleBox {
+      .textWrapper {
+        .line {
+          width: 20vw;
+        }
+      }
+    }
+  }
+  @keyframes stretch {
+    to {
+      left: 57vw;
+    }
+  }
+}
+@media (min-height: 700px) {
+  .rightBox {
+    .middleBox {
+      .textWrapper {
+        .line {
+          top: 296px;
+        }
+      }
+    }
+  }
+}
+@media (min-height: 900px) {
+  .rightBox {
+    .middleBox {
+      .textWrapper {
+        .line {
+          top: 320px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  @keyframes stretch {
+    to {
+      left: 55vw;
     }
   }
 }

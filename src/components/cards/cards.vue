@@ -3,7 +3,7 @@
     <template>
       <v-container>
         <v-row>
-          <v-col v-for="(item, index) in cardData" :key="index">
+          <v-col cols="4" v-for="(item, index) in cardData" :key="index">
             <card
               :icon="item.icon"
               :headline="item.headline"

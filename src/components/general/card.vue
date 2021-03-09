@@ -53,8 +53,7 @@ export default {
   color: $mainColor !important;
 }
 .v-card {
-  height: 462px !important;
-  //   width: 300px !important;
+  height: 400px !important;
   padding: 50px !important;
   box-shadow: 0 10px 30px rgb(0 0 0 / 18%);
 }

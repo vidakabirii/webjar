@@ -47,12 +47,12 @@ export default {};
   padding: 0% 12%;
   img {
     max-width: 100%;
-    width: 352px;
-    height: 352px;
+    width: 100%;
+    height: 100%;
   }
   .albumText {
-    width: 720px;
-    height: 352px;
+    width: 100%;
+    height: 100%;
     background-color: #754ef9;
   }
 }
