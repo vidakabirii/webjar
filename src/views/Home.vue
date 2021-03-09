@@ -51,7 +51,7 @@
     </v-row>
     <cards />
     <album />
- 
+    <userCard :users="users" v-if="users.length != 0" />
   </div>
 </template>
 
@@ -59,16 +59,36 @@
 import headerComp from "@/components/main/header.vue";
 import cards from "@/components/cards/cards.vue";
 import album from "@/components/album/album.vue";
-// import * as dataServices from "@/service/api/api.js";
+import userCard from "@/components/users/users.vue";
+import * as dataServices from "@/service/api/api.js";
 
 export default {
   name: "Home",
-  components: { headerComp, cards, album },
+  data() {
+    return {
+      users: [],
+    };
+  },
+  components: { headerComp, cards, album, userCard },
   mounted() {
-    // this.getData();
+    this.getData();
   },
   methods: {
-    
+    getData() {
+      dataServices.get().then((res) => {
+        this.users = res.data.results.map(function(item) {
+          return {
+            photo: item.picture.medium,
+            fullName:
+              item.name.first +
+              " " +
+              item.name.last +
+              ", " +
+              item.location.country,
+          };
+        });
+      });
+    },
   },
 };
 </script>
