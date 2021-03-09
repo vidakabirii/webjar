@@ -81,7 +81,7 @@ export default {
         opacity: 0.5;
         line-height: 1.8;
         height: 10vh;
-        overflow: scroll;
+        // overflow: scroll;
       }
     }
   }
